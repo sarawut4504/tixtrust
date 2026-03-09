@@ -2,19 +2,120 @@
 <html>
 <head>
 <title>TixTrust</title>
+
 <style>
-body{font-family:Arial;background:#0f172a;color:white;text-align:center;padding:50px}
-h1{font-size:48px}
-p{color:#cbd5e1}
-button{padding:15px 30px;font-size:18px;background:#22c55e;border:none;border-radius:8px;color:white}
+body{
+font-family:Arial;
+margin:0;
+background:#0f1f2e;
+color:white;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:#091421;
+}
+
+.navbar a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(#0c1b2a,#142d46);
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero button{
+padding:15px 30px;
+font-size:18px;
+background:#2ecc71;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.events{
+padding:40px;
+display:flex;
+gap:20px;
+}
+
+.card{
+background:white;
+color:black;
+border-radius:10px;
+overflow:hidden;
+width:300px;
+}
+
+.card img{
+width:100%;
+}
+
+.card h3{
+padding:10px;
+}
 </style>
+
 </head>
+
 <body>
 
-<h1>TixTrust</h1>
-<p>Buy & Sell Concert Tickets Safely</p>
+<div class="navbar">
+
+<div><b>TixTrust</b></div>
+
+<div>
+<a href="#">Buy Tickets</a>
+<a href="#">Sell Tickets</a>
+<a href="#">How it Works</a>
+<a href="#">Login</a>
+</div>
+
+</div>
+
+<div class="hero">
+
+<h1>Buy & Sell Concert Tickets Safely</h1>
+
+<p>Avoid scams. Get verified tickets.</p>
+
+<br>
 
 <button>Browse Events</button>
+
+</div>
+
+<h2 style="padding-left:40px;">Popular Events</h2>
+
+<div class="events">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
+<h3>Tomorrowland Thailand</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518972559570-0a555b8e6b27">
+<h3>K-POP Concert</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
+<h3>EDM Festival</h3>
+</div>
+
+</div>
 
 </body>
 </html>
