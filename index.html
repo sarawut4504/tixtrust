@@ -8,8 +8,8 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f6fb;
+font-family:Arial;
+background:#f2f4f8;
 }
 
 /* NAVBAR */
@@ -19,20 +19,31 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 60px;
-background:linear-gradient(90deg,#0d2b55,#1c4a86);
+background:linear-gradient(90deg,#0a2a55,#184785);
 color:white;
 }
 
-.nav-links a{
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.nav a{
 margin-left:25px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-size:14px;
 }
 
-.signup{
-background:#ff7a00;
+.login{
 padding:8px 16px;
+background:#233c68;
+border-radius:6px;
+}
+
+.signup{
+padding:8px 16px;
+background:#ff7a00;
 border-radius:6px;
 }
 
@@ -41,54 +52,52 @@ border-radius:6px;
 .hero{
 height:520px;
 background:
-linear-gradient(rgba(5,20,40,0.85),rgba(5,20,40,0.9)),
-url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745") center/cover;
-color:white;
+linear-gradient(rgba(0,20,40,0.8),rgba(0,20,40,0.9)),
+url("https://images.unsplash.com/photo-1506157786151-b8491531f063") center/cover;
 display:flex;
 align-items:center;
 padding-left:80px;
+color:white;
 }
 
 .hero-box{
-max-width:600px;
+max-width:650px;
 }
 
 .hero h1{
-font-size:54px;
+font-size:56px;
 margin:0;
 }
 
 .hero p{
 margin-top:10px;
-color:#d6dff8;
+color:#cfd9ff;
 }
-
-/* SEARCH */
 
 .search{
 margin-top:20px;
 }
 
 .search input{
-width:360px;
+width:420px;
 padding:14px;
-border-radius:6px;
 border:none;
+border-radius:6px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 
 .buttons{
 margin-top:20px;
 }
 
 .btn{
-padding:14px 22px;
+padding:14px 24px;
 border:none;
 border-radius:6px;
 margin-right:10px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
 }
 
 .blue{
@@ -131,14 +140,9 @@ gap:25px;
 
 .card{
 background:white;
-border-radius:12px;
+border-radius:10px;
 overflow:hidden;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
 .card img{
@@ -147,7 +151,7 @@ height:200px;
 object-fit:cover;
 }
 
-.card-content{
+.card-body{
 padding:15px;
 }
 
@@ -187,23 +191,58 @@ color:white;
 /* GUARANTEE */
 
 .guarantee{
-background:#0b2a54;
+background:#0c2c5a;
 color:white;
 display:flex;
 justify-content:center;
 gap:80px;
-padding:30px;
-font-size:15px;
+padding:35px;
+}
+
+/* HELP SECTION */
+
+.help{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:40px;
+}
+
+.help-box{
+position:relative;
+border-radius:12px;
+overflow:hidden;
+}
+
+.help-box img{
+width:100%;
+height:180px;
+object-fit:cover;
+filter:brightness(0.7);
+}
+
+.help-text{
+position:absolute;
+top:25px;
+left:25px;
+color:white;
 }
 
 /* FOOTER */
 
 footer{
-background:#0b2a54;
+background:#0c2c5a;
 color:white;
 text-align:center;
 padding:40px;
-margin-top:60px;
+margin-top:50px;
+}
+
+footer a{
+color:#ddd;
+margin:0 10px;
+text-decoration:none;
+font-size:14px;
 }
 
 </style>
@@ -214,14 +253,14 @@ margin-top:60px;
 
 <div class="navbar">
 
-<h2>TixTrust</h2>
+<div class="logo">TixTrust</div>
 
-<div class="nav-links">
+<div class="nav">
 <a href="#">Buy Tickets</a>
 <a href="#">Sell Tickets</a>
 <a href="#">Ticket Hunter</a>
 <a href="#">How it Works</a>
-<a href="#">Log in</a>
+<a class="login" href="#">Log in</a>
 <a class="signup" href="#">Sign Up</a>
 </div>
 
@@ -236,7 +275,7 @@ margin-top:60px;
 <p>Avoid Scams, Get Your Tickets Here</p>
 
 <div class="search">
-<input placeholder="Search events or artists">
+<input placeholder="Search events or artists...">
 </div>
 
 <div class="buttons">
@@ -262,7 +301,7 @@ margin-top:60px;
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
-<div class="card-content">
+<div class="card-body">
 <h3>Tomorrowland Thailand</h3>
 <p>Tickets from <span class="price">฿7,500</span></p>
 </div>
@@ -270,7 +309,7 @@ margin-top:60px;
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
-<div class="card-content">
+<div class="card-body">
 <h3>K-POP Concert</h3>
 <p>Tickets from <span class="price">฿4,000</span></p>
 </div>
@@ -278,7 +317,7 @@ margin-top:60px;
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
-<div class="card-content">
+<div class="card-body">
 <h3>EDM Festival</h3>
 <p>Tickets from <span class="price">฿3,500</span></p>
 </div>
@@ -296,6 +335,7 @@ margin-top:60px;
 <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229">
 <div class="sell-text">
 <h2>SELL YOUR TICKETS</h2>
+<p>List Your Tickets & Get Paid Safely</p>
 <button class="btn blue">SELL NOW</button>
 </div>
 </div>
@@ -304,7 +344,30 @@ margin-top:60px;
 <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
 <div class="sell-text">
 <h2>BECOME A TICKET HUNTER</h2>
+<p>Help Others Get Sold-Out Tickets</p>
 <button class="btn orange">LEARN MORE</button>
+</div>
+</div>
+
+</div>
+
+<div class="help">
+
+<div class="help-box">
+<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
+<div class="help-text">
+<h2>Nervous Buying Tickets?</h2>
+<p>Safe & Secure Platform</p>
+<button class="btn blue">LEARN HOW</button>
+</div>
+</div>
+
+<div class="help-box">
+<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
+<div class="help-text">
+<h2>Need Help Getting Tickets?</h2>
+<p>Hire a Ticket Hunter Today!</p>
+<button class="btn orange">GET STARTED</button>
 </div>
 </div>
 
@@ -322,7 +385,13 @@ margin-top:60px;
 
 <footer>
 
-<p>© 2026 TixTrust</p>
+<a href="#">About Us</a>
+<a href="#">FAQs</a>
+<a href="#">Support</a>
+<a href="#">Terms</a>
+<a href="#">Privacy</a>
+
+<p style="margin-top:20px">© 2026 TixTrust</p>
 
 </footer>
 
