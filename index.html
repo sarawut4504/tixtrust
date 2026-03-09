@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f3f6fb;
+background:#f4f6fb;
 }
 
 /* NAVBAR */
@@ -18,15 +18,20 @@ background:#f3f6fb;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 40px;
-background:#0b2a54;
+padding:18px 50px;
+background:linear-gradient(90deg,#0b2a54,#123a75);
 color:white;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
 }
 
 .nav-links a{
 margin-left:25px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 }
 
 .signup{
@@ -38,9 +43,10 @@ border-radius:6px;
 /* HERO */
 
 .hero{
-background:linear-gradient(rgba(5,20,40,0.8),rgba(5,20,40,0.9)),
-url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745") center/cover;
 height:520px;
+background:
+linear-gradient(rgba(5,20,40,0.8),rgba(5,20,40,0.9)),
+url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745") center/cover;
 color:white;
 display:flex;
 flex-direction:column;
@@ -49,7 +55,7 @@ padding-left:80px;
 }
 
 .hero h1{
-font-size:52px;
+font-size:54px;
 margin:0;
 }
 
@@ -58,39 +64,52 @@ margin-top:10px;
 color:#ddd;
 }
 
+/* SEARCH */
+
 .search{
 margin-top:20px;
 }
 
 .search input{
 padding:14px;
-width:320px;
-border:none;
+width:350px;
 border-radius:6px;
+border:none;
 }
 
-/* BUTTONS */
+/* BUTTON */
 
 .buttons{
-margin-top:25px;
+margin-top:20px;
 }
 
 .btn{
 padding:14px 22px;
-border-radius:6px;
 border:none;
+border-radius:6px;
 margin-right:10px;
 cursor:pointer;
+font-weight:bold;
 }
 
-.btn-blue{
+.blue{
 background:#2e77ff;
 color:white;
 }
 
-.btn-orange{
+.orange{
 background:#ff7a00;
 color:white;
+}
+
+/* TRUST ICONS */
+
+.trust{
+margin-top:25px;
+display:flex;
+gap:30px;
+font-size:14px;
+color:#cdd8f6;
 }
 
 /* SECTION */
@@ -101,19 +120,24 @@ margin:auto;
 padding:60px 20px;
 }
 
-/* EVENTS */
-
 .events{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:25px;
 }
 
+/* CARD */
+
 .card{
 background:white;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 .card img{
@@ -123,7 +147,7 @@ object-fit:cover;
 }
 
 .card-content{
-padding:16px;
+padding:15px;
 }
 
 .price{
@@ -131,9 +155,9 @@ color:#ff7a00;
 font-weight:bold;
 }
 
-/* SELL */
+/* SELL SECTION */
 
-.sell-grid{
+.sell{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:20px;
@@ -155,25 +179,18 @@ filter:brightness(0.7);
 
 .sell-text{
 position:absolute;
-top:30px;
-left:30px;
+top:25px;
+left:25px;
 }
 
-/* TRUST */
-
-.trust{
-display:flex;
-justify-content:center;
-gap:60px;
-padding:30px;
-background:#0b2a54;
-color:white;
-}
+/* FOOTER */
 
 footer{
-text-align:center;
+margin-top:60px;
 padding:40px;
-background:#f0f2f7;
+text-align:center;
+background:#0b2a54;
+color:white;
 }
 
 </style>
@@ -184,7 +201,7 @@ background:#f0f2f7;
 
 <div class="navbar">
 
-<h2>TixTrust</h2>
+<div class="logo">TixTrust</div>
 
 <div class="nav-links">
 <a href="#">Buy Tickets</a>
@@ -208,11 +225,14 @@ background:#f0f2f7;
 </div>
 
 <div class="buttons">
+<button class="btn blue">FIND TICKETS</button>
+<button class="btn orange">BECOME A TICKET HUNTER</button>
+</div>
 
-<button class="btn btn-blue">FIND TICKETS</button>
-
-<button class="btn btn-orange">BECOME A TICKET HUNTER</button>
-
+<div class="trust">
+<span>✔ Buyer Protection</span>
+<span>✔ Verified Sellers</span>
+<span>✔ Secure Payment</span>
 </div>
 
 </div>
@@ -253,33 +273,25 @@ background:#f0f2f7;
 
 <div class="section">
 
-<div class="sell-grid">
+<div class="sell">
 
 <div class="sell-box">
 <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229">
 <div class="sell-text">
-<h3>SELL YOUR TICKETS</h3>
-<button class="btn btn-blue">SELL NOW</button>
+<h2>SELL YOUR TICKETS</h2>
+<button class="btn blue">SELL NOW</button>
 </div>
 </div>
 
 <div class="sell-box">
 <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
 <div class="sell-text">
-<h3>BECOME A TICKET HUNTER</h3>
-<button class="btn btn-orange">LEARN MORE</button>
+<h2>BECOME A TICKET HUNTER</h2>
+<button class="btn orange">LEARN MORE</button>
 </div>
 </div>
 
 </div>
-
-</div>
-
-<div class="trust">
-
-<div>✔ 100% Ticket Guarantee</div>
-<div>✔ Verified Sellers Only</div>
-<div>✔ Secure Transactions</div>
 
 </div>
 
