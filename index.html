@@ -8,7 +8,7 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#f4f6fb;
 }
 
@@ -18,20 +18,16 @@ background:#f4f6fb;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 50px;
-background:linear-gradient(90deg,#0b2a54,#123a75);
+padding:18px 60px;
+background:linear-gradient(90deg,#0d2b55,#1c4a86);
 color:white;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
 }
 
 .nav-links a{
 margin-left:25px;
-color:white;
 text-decoration:none;
+color:white;
+font-size:14px;
 }
 
 .signup{
@@ -45,13 +41,16 @@ border-radius:6px;
 .hero{
 height:520px;
 background:
-linear-gradient(rgba(5,20,40,0.8),rgba(5,20,40,0.9)),
+linear-gradient(rgba(5,20,40,0.85),rgba(5,20,40,0.9)),
 url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745") center/cover;
 color:white;
 display:flex;
-flex-direction:column;
-justify-content:center;
+align-items:center;
 padding-left:80px;
+}
+
+.hero-box{
+max-width:600px;
 }
 
 .hero h1{
@@ -61,7 +60,7 @@ margin:0;
 
 .hero p{
 margin-top:10px;
-color:#ddd;
+color:#d6dff8;
 }
 
 /* SEARCH */
@@ -71,8 +70,8 @@ margin-top:20px;
 }
 
 .search input{
+width:360px;
 padding:14px;
-width:350px;
 border-radius:6px;
 border:none;
 }
@@ -102,14 +101,16 @@ background:#ff7a00;
 color:white;
 }
 
-/* TRUST ICONS */
+/* TRUST */
 
 .trust{
-margin-top:25px;
-display:flex;
-gap:30px;
+margin-top:20px;
 font-size:14px;
-color:#cdd8f6;
+color:#cfd9ff;
+}
+
+.trust span{
+margin-right:25px;
 }
 
 /* SECTION */
@@ -120,13 +121,13 @@ margin:auto;
 padding:60px 20px;
 }
 
+/* EVENTS */
+
 .events{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:25px;
 }
-
-/* CARD */
 
 .card{
 background:white;
@@ -167,30 +168,42 @@ gap:20px;
 position:relative;
 border-radius:12px;
 overflow:hidden;
-color:white;
 }
 
 .sell-box img{
 width:100%;
 height:180px;
 object-fit:cover;
-filter:brightness(0.7);
+filter:brightness(0.6);
 }
 
 .sell-text{
 position:absolute;
 top:25px;
 left:25px;
+color:white;
+}
+
+/* GUARANTEE */
+
+.guarantee{
+background:#0b2a54;
+color:white;
+display:flex;
+justify-content:center;
+gap:80px;
+padding:30px;
+font-size:15px;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:60px;
-padding:40px;
-text-align:center;
 background:#0b2a54;
 color:white;
+text-align:center;
+padding:40px;
+margin-top:60px;
 }
 
 </style>
@@ -201,7 +214,7 @@ color:white;
 
 <div class="navbar">
 
-<div class="logo">TixTrust</div>
+<h2>TixTrust</h2>
 
 <div class="nav-links">
 <a href="#">Buy Tickets</a>
@@ -215,6 +228,8 @@ color:white;
 </div>
 
 <div class="hero">
+
+<div class="hero-box">
 
 <h1>BUY & RESELL TICKETS SAFELY</h1>
 
@@ -233,6 +248,8 @@ color:white;
 <span>✔ Buyer Protection</span>
 <span>✔ Verified Sellers</span>
 <span>✔ Secure Payment</span>
+</div>
+
 </div>
 
 </div>
@@ -292,6 +309,14 @@ color:white;
 </div>
 
 </div>
+
+</div>
+
+<div class="guarantee">
+
+<div>✔ 100% Ticket Guarantee</div>
+<div>✔ Verified Sellers Only</div>
+<div>✔ Secure Transactions</div>
 
 </div>
 
