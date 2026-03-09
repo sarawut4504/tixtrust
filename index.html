@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>TixTrust</title>
@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f5f5f5;
+background:#f3f6fb;
 }
 
 /* NAVBAR */
@@ -18,399 +18,276 @@ background:#f5f5f5;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-position:sticky;
-top:0;
-}
-
-.logo{
-font-size:20px;
-font-weight:bold;
+padding:18px 40px;
+background:#0b2a54;
+color:white;
 }
 
 .nav-links a{
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
-color:#333;
+color:white;
 }
 
 .signup{
 background:#ff7a00;
-color:white;
-padding:8px 14px;
+padding:8px 16px;
 border-radius:6px;
 }
 
 /* HERO */
 
 .hero{
-height:420px;
-background:url("https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2") center/cover;
+background:linear-gradient(rgba(5,20,40,0.8),rgba(5,20,40,0.9)),
+url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745") center/cover;
+height:520px;
+color:white;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-color:white;
-text-align:center;
+padding-left:80px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:52px;
+margin:0;
 }
 
-.search-box{
+.hero p{
+margin-top:10px;
+color:#ddd;
+}
+
+.search{
 margin-top:20px;
-display:flex;
-gap:10px;
 }
 
-.search-box input{
-padding:12px;
-width:260px;
+.search input{
+padding:14px;
+width:320px;
 border:none;
 border-radius:6px;
 }
 
-.search-box button{
-padding:12px 20px;
-background:#ff7a00;
+/* BUTTONS */
+
+.buttons{
+margin-top:25px;
+}
+
+.btn{
+padding:14px 22px;
+border-radius:6px;
 border:none;
+margin-right:10px;
+cursor:pointer;
+}
+
+.btn-blue{
+background:#2e77ff;
 color:white;
-border-radius:6px;
 }
 
-/* SECTIONS */
+.btn-orange{
+background:#ff7a00;
+color:white;
+}
+
+/* SECTION */
 
 .section{
-padding:60px 20px;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
+padding:60px 20px;
 }
 
 /* EVENTS */
 
 .events{
-display:flex;
-gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .card{
 background:white;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
 overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .card img{
 width:100%;
-height:180px;
+height:200px;
 object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:16px;
+}
+
+.price{
+color:#ff7a00;
+font-weight:bold;
+}
+
+/* SELL */
+
+.sell-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.sell-box{
+position:relative;
+border-radius:12px;
+overflow:hidden;
+color:white;
+}
+
+.sell-box img{
+width:100%;
+height:180px;
+object-fit:cover;
+filter:brightness(0.7);
+}
+
+.sell-text{
+position:absolute;
+top:30px;
+left:30px;
 }
 
 /* TRUST */
 
 .trust{
 display:flex;
-gap:20px;
-}
-
-.trust div{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* HOW */
-
-.steps{
-display:flex;
-gap:20px;
-}
-
-.steps div{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* SELL */
-
-.sell{
-text-align:center;
-background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.sell button{
-margin-top:15px;
-padding:12px 25px;
-background:#ff7a00;
-border:none;
+justify-content:center;
+gap:60px;
+padding:30px;
+background:#0b2a54;
 color:white;
-border-radius:6px;
 }
-
-/* FOOTER */
 
 footer{
-margin-top:80px;
-background:#111;
-color:white;
 text-align:center;
 padding:40px;
-}
-
-/* POPUP */
-
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-justify-content:center;
-align-items:center;
-}
-
-.popup-content{
-background:white;
-padding:30px;
-border-radius:10px;
-width:300px;
-}
-
-.popup-content input{
-width:100%;
-padding:10px;
-margin-top:10px;
-}
-
-.popup-content button{
-margin-top:15px;
-width:100%;
-padding:10px;
-background:#ff7a00;
-border:none;
-color:white;
-border-radius:6px;
+background:#f0f2f7;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
 
-<div class="logo">TixTrust</div>
+<h2>TixTrust</h2>
 
 <div class="nav-links">
-<a href="#">Home</a>
-<a href="#">Events</a>
-<a href="#">Sell</a>
-<a href="#" onclick="openLogin()">Login</a>
-<a class="signup" href="#" onclick="openSignup()">Sign Up</a>
+<a href="#">Buy Tickets</a>
+<a href="#">Sell Tickets</a>
+<a href="#">Ticket Hunter</a>
+<a href="#">How it Works</a>
+<a href="#">Log in</a>
+<a class="signup" href="#">Sign Up</a>
 </div>
 
 </div>
-
-<!-- HERO -->
 
 <div class="hero">
 
-<h1>Buy & Resell Tickets Safely</h1>
+<h1>BUY & RESELL TICKETS SAFELY</h1>
 
-<div class="search-box">
+<p>Avoid Scams, Get Your Tickets Here</p>
+
+<div class="search">
 <input placeholder="Search events or artists">
-<button>Find Tickets</button>
 </div>
+
+<div class="buttons">
+
+<button class="btn btn-blue">FIND TICKETS</button>
+
+<button class="btn btn-orange">BECOME A TICKET HUNTER</button>
 
 </div>
 
-<!-- EVENTS -->
+</div>
 
 <div class="section">
 
-<h2>Popular Events</h2>
+<h2>POPULAR EVENTS</h2>
 
 <div class="events">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
+<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
 <div class="card-content">
-<h3>Tomorrowland Festival</h3>
-<p>Bangkok • From $120</p>
+<h3>Tomorrowland Thailand</h3>
+<p>Tickets from <span class="price">฿7,500</span></p>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
 <div class="card-content">
-<h3>KPOP World Tour</h3>
-<p>Seoul • From $90</p>
+<h3>K-POP Concert</h3>
+<p>Tickets from <span class="price">฿4,000</span></p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
+<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
 <div class="card-content">
 <h3>EDM Festival</h3>
-<p>Singapore • From $75</p>
+<p>Tickets from <span class="price">฿3,500</span></p>
 </div>
 </div>
 
 </div>
 
 </div>
-
-<!-- TRUST -->
 
 <div class="section">
 
-<h2>Why TixTrust?</h2>
+<div class="sell-grid">
+
+<div class="sell-box">
+<img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229">
+<div class="sell-text">
+<h3>SELL YOUR TICKETS</h3>
+<button class="btn btn-blue">SELL NOW</button>
+</div>
+</div>
+
+<div class="sell-box">
+<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
+<div class="sell-text">
+<h3>BECOME A TICKET HUNTER</h3>
+<button class="btn btn-orange">LEARN MORE</button>
+</div>
+</div>
+
+</div>
+
+</div>
 
 <div class="trust">
 
-<div>
-<h3>Secure Payments</h3>
-<p>All transactions protected.</p>
-</div>
-
-<div>
-<h3>Verified Sellers</h3>
-<p>Sellers are verified.</p>
-</div>
-
-<div>
-<h3>Buyer Protection</h3>
-<p>Money back guarantee.</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- HOW -->
-
-<div class="section">
-
-<h2>How It Works</h2>
-
-<div class="steps">
-
-<div>
-<h3>1. Find Event</h3>
-<p>Search concerts or festivals</p>
-</div>
-
-<div>
-<h3>2. Buy Securely</h3>
-<p>Safe payment system</p>
-</div>
-
-<div>
-<h3>3. Enjoy Show</h3>
-<p>Receive tickets instantly</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- SELL -->
-
-<div class="section">
-
-<div class="sell">
-
-<h2>Sell Your Tickets</h2>
-
-<p>Have extra tickets? List them safely on TixTrust.</p>
-
-<button>Sell Tickets</button>
-
-</div>
+<div>✔ 100% Ticket Guarantee</div>
+<div>✔ Verified Sellers Only</div>
+<div>✔ Secure Transactions</div>
 
 </div>
 
 <footer>
 
-<h3>TixTrust</h3>
-
-<p>Safe Ticket Marketplace</p>
+<p>© 2026 TixTrust</p>
 
 </footer>
-
-<!-- LOGIN POPUP -->
-
-<div id="loginPopup" class="popup">
-
-<div class="popup-content">
-
-<h3>Login</h3>
-
-<input placeholder="Email">
-<input placeholder="Password" type="password">
-
-<button>Login</button>
-
-</div>
-
-</div>
-
-<!-- SIGNUP POPUP -->
-
-<div id="signupPopup" class="popup">
-
-<div class="popup-content">
-
-<h3>Create Account</h3>
-
-<input placeholder="Name">
-<input placeholder="Email">
-<input placeholder="Password" type="password">
-
-<button>Sign Up</button>
-
-</div>
-
-</div>
-
-<script>
-
-function openLogin(){
-document.getElementById("loginPopup").style.display="flex"
-}
-
-function openSignup(){
-document.getElementById("signupPopup").style.display="flex"
-}
-
-window.onclick=function(e){
-
-if(e.target.id==="loginPopup")
-document.getElementById("loginPopup").style.display="none"
-
-if(e.target.id==="signupPopup")
-document.getElementById("signupPopup").style.display="none"
-
-}
-
-</script>
 
 </body>
 </html>
