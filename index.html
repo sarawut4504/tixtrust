@@ -1,215 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>TixTrust</title>
 
 <style>
-<div class="section sell">
-<h2>Sell Your Tickets</h2>
-<p>Have extra tickets? List them safely on TixTrust.</p>
-<button class="sell-btn">Sell Tickets</button>
-</div>
+
 body{
 margin:0;
 font-family:Arial;
-background:#0a2540;
-color:white;
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 50px;
-background:#061a33;
-}
-
-.navbar a{
-color:white;
-margin-left:25px;
-text-decoration:none;
-font-weight:500;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
+background:#f5f5f5;
 }
 
 .hero{
+height:420px;
+background:url("https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2") center/cover;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
 text-align:center;
-padding:140px 20px;
-background-image:linear-gradient(
-rgba(0,0,0,0.55),
-rgba(0,0,0,0.65)
-),
-url("https://images.unsplash.com/photo-1501281668745-f7f57925c3b4");
-background-size:cover;
-background-position:center;
 }
 
 .hero h1{
-font-size:48px;
-color:white;
-text-shadow:0 6px 30px rgba(0,0,0,0.8);
+font-size:42px;
+margin-bottom:20px;
 }
 
-.hero p{
-opacity:0.9;
+.search-box{
+display:flex;
+gap:10px;
 }
 
-.search{
-margin-top:30px;
-}
-
-.search input{
-width:350px;
-padding:14px;
+.search-box input{
+padding:12px;
+width:280px;
 border-radius:6px;
 border:none;
-font-size:16px;
 }
 
-.search button{
-padding:14px 25px;
-background:#ff7a1a;
+.search-box button{
+padding:12px 20px;
+background:#ff7a00;
 border:none;
-border-radius:6px;
 color:white;
-font-size:16px;
-font-weight:bold;
+border-radius:6px;
 cursor:pointer;
-margin-left:10px;
-box-shadow:0 6px 20px rgba(255,122,26,0.5);
-transition:0.2s;
-}
-  .search button:hover{
-background:#ff8c3a;
-transform:scale(1.05);
 }
 
 .section{
-padding:60px 60px;
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 .events{
 display:flex;
-gap:25px;
+gap:20px;
 }
 
 .card{
 background:white;
-color:black;
 border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 overflow:hidden;
-width:320px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+width:100%;
+transition:0.3s;
 }
-  .card:hover{
-transform:translateY(-8px);
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .card img{
 width:100%;
-height:200px;
+height:180px;
 object-fit:cover;
 }
 
-.card h3{
+.card-content{
 padding:15px;
-margin:0;
+}
+
+.trust-grid{
+display:flex;
+justify-content:space-between;
+gap:40px;
+}
+
+.trust-item{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:100%;
+text-align:center;
+}
+
+.steps{
+display:flex;
+gap:30px;
+text-align:center;
+}
+
+.step{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:100%;
+}
+
+.sell{
+text-align:center;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.sell button{
+margin-top:15px;
+padding:12px 25px;
+background:#ff7a00;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+footer{
+margin-top:80px;
+background:#111;
+color:white;
+text-align:center;
+padding:40px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="navbar">
-
-<div class="logo">TixTrust</div>
-
-<div>
-<a href="#">Buy Tickets</a>
-<a href="#">Sell Tickets</a>
-<a href="#">How it Works</a>
-<a href="#">Login</a>
-</div>
-
-</div>
-
 <div class="hero">
-
 <h1>Buy & Resell Tickets Safely</h1>
 
-<p>Avoid scams. Verified sellers only.</p>
-
-<div class="search">
-
+<div class="search-box">
 <input placeholder="Search events or artists">
-
 <button>Find Tickets</button>
+</div>
+</div>
+
+<div class="section">
+
+<h2>Popular Events</h2>
+
+<div class="events">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
+<div class="card-content">
+<h3>Tomorrowland Festival</h3>
+<p>Bangkok • From $120</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
+<div class="card-content">
+<h3>K-POP World Tour</h3>
+<p>Seoul • From $90</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
+<div class="card-content">
+<h3>EDM Festival</h3>
+<p>Singapore • From $75</p>
+</div>
+</div>
 
 </div>
 
 </div>
 
 <div class="section">
-  <style>
-.section{
-padding-bottom:80px;
-}
-</style>
 
-<h2>Popular Events</h2>
-<div class="events">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
-<h3>Tomorrowland Festival</h3>
-<p style="padding:0 15px 15px;">Bangkok • From $120</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
-<h3>K-POP World Tour</h3>
-<p style="padding:0 15px 15px;">Seoul • From $90</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745">
-<h3>EDM Festival</h3>
-<p style="padding:0 15px 15px;">Singapore • From $75</p>
-</div>
-
-  <section class="trust">
 <h2>Why TixTrust?</h2>
 
 <div class="trust-grid">
 
-
 <div class="trust-item">
 <h3>Secure Payments</h3>
-<p>All payments are protected and verified.</p>
+<p>All transactions are protected.</p>
 </div>
 
 <div class="trust-item">
 <h3>Verified Sellers</h3>
-<p>Every seller goes through our verification system.</p>
+<p>Sellers go through verification.</p>
 </div>
 
 <div class="trust-item">
 <h3>Buyer Protection</h3>
-<p>Get your tickets or your money back.</p>
+<p>Get tickets or your money back.</p>
 </div>
 
 </div>
-</section>
+
 </div>
-<div class="section sell">
+
+<div class="section">
+
+<h2>How It Works</h2>
+
+<div class="steps">
+
+<div class="step">
+<h3>1. Find Events</h3>
+<p>Search concerts or festivals.</p>
+</div>
+
+<div class="step">
+<h3>2. Buy Securely</h3>
+<p>Payments protected by TixTrust.</p>
+</div>
+
+<div class="step">
+<h3>3. Enjoy the Show</h3>
+<p>Receive tickets instantly.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="sell">
+
 <h2>Sell Your Tickets</h2>
+
 <p>Have extra tickets? List them safely on TixTrust.</p>
-<button class="sell-btn">Sell Tickets</button>
+
+<button>Sell Tickets</button>
+
 </div>
 
+</div>
+
+<footer>
+
+<h3>TixTrust</h3>
+
+<p>Safe Ticket Marketplace</p>
+
+<p>© 2026 TixTrust</p>
+
+</footer>
+
+</body>
+</html>
