@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+</head>
+
+<body>
+
+<h2>Login</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="signup()">Sign Up</button>
+<button onclick="login()">Login</button>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword }
+from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "PUT-YOUR-APIKEY",
+  authDomain: "PUT-YOUR-AUTHDOMAIN",
+  projectId: "PUT-YOUR-PROJECTID",
+  appId: "PUT-YOUR-APPID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+window.signup = function(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+createUserWithEmailAndPassword(auth,email,password)
+.then(()=>alert("Account created"))
+.catch(e=>alert(e.message));
+}
+
+window.login = function(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+signInWithEmailAndPassword(auth,email,password)
+.then(()=>alert("Logged in"))
+.catch(e=>alert(e.message));
+}
+
+</script>
+
+</body>
+</html>
