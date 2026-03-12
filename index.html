@@ -3,159 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TixTrust - Website Maintenance</title>
+    <title>TixTrust Maintenance</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
     <style>
-        /* --- ตั้งค่าพื้นฐาน --- */
+        :root {
+            --bg-deep: #060b19;
+            --blue-glow: #1e3a8a;
+            --accent-blue: #38bdf8;
+            --accent-gold: #fbbf24;
+            --white: #ffffff;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'Kanit', 'Inter', sans-serif;
-            background: #0f172a; /* สีน้ำเงินเข้ม */
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
-            color: #ffffff;
+            background-color: var(--bg-deep);
+            color: var(--white);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 50%, var(--blue-glow) 0%, transparent 70%);
         }
 
-        /* --- กล่องข้อความหลัก --- */
-        .maintenance-card {
-            width: 90%;
-            max-width: 900px;
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 40px;
-            padding: 50px;
+        /* --- เส้นวงจรและฉากหลัง (Background Tech Decor) --- */
+        .tech-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            background-image: 
+                linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        /* --- กล่องหลัก --- */
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            padding: 60px 40px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 10;
         }
 
-        /* --- โลโก้ --- */
+        /* --- Logo & Title --- */
         .logo {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
+            letter-spacing: -2px;
             margin-bottom: 10px;
         }
-        .logo span { color: #38bdf8; }
+        .logo span { color: var(--accent-gold); }
 
-        .headline {
-            font-size: 1.8rem;
+        .main-title {
+            font-size: 2.2rem;
             margin-bottom: 5px;
-            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
-        .sub-headline {
-            font-size: 1.1rem;
-            color: #94a3b8;
+        .sub-title {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
             margin-bottom: 40px;
+            font-weight: 400;
         }
 
-        /* --- การจัดวาง 2 ภาษา --- */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            text-align: left;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 40px;
-        }
-
-        .lang-box h2 {
-            color: #38bdf8;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-        .lang-box p {
-            line-height: 1.8;
-            color: #cbd5e1;
+        /* --- ข้อความอธิบายช่วงกลาง --- */
+        .desc-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #e2e8f0;
             font-weight: 300;
         }
 
-        /* --- ลูกเล่น จรวดและฟันเฟือง (เหมือนรูปภาพ) --- */
-        .animation-area {
-            grid-column: span 2;
-            padding: 40px 0;
-            position: relative;
-        }
-        .rocket {
-            font-size: 80px;
-            display: inline-block;
-            transform: rotate(-35deg);
-            animation: floatRocket 4s ease-in-out infinite;
-        }
-        .gear {
-            position: absolute;
-            font-size: 30px;
-            opacity: 0.5;
-            animation: spin 8s linear infinite;
+        /* --- Layout 2 คอลัมน์ (ตามภาพ) --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr 1fr;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
         }
 
-        /* --- ส่วนล่างสุด --- */
-        .footer-banner {
-            margin-top: 40px;
+        .lang-side {
             padding: 20px;
-            background: rgba(56, 189, 248, 0.1);
-            border-radius: 20px;
-            color: #fbbf24;
+        }
+        .lang-side.right { text-align: left; }
+
+        .lang-side p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .status-highlight {
+            color: var(--accent-gold);
             font-weight: 600;
-            letter-spacing: 1px;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* --- รูปจรวดตรงกลาง (Central Graphic) --- */
+        .center-graphic {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rocket-main {
+            font-size: 120px;
+            filter: drop-shadow(0 0 20px var(--accent-blue));
+            animation: rocketFloat 3s ease-in-out infinite;
+        }
+
+        .decor-icon {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.8;
+        }
+        .gear-top { top: -20px; left: 10px; animation: spin 10s linear infinite; }
+        .lock-bottom { bottom: 10px; right: 10px; }
+
+        /* --- ส่วนล่างสุด (Footer Bar) --- */
+        .footer-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(56, 189, 248, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-top: 1px solid rgba(56, 189, 248, 0.3);
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+        }
+
+        /* --- Floating Icons รอบๆ --- */
+        .floating-obj {
+            position: absolute;
+            opacity: 0.5;
+            animation: float 6s ease-in-out infinite;
+            z-index: 5;
         }
 
         /* --- Animations --- */
-        @keyframes floatRocket {
-            0%, 100% { transform: translateY(0) rotate(-35deg); }
-            50% { transform: translateY(-20px) rotate(-30deg); }
+        @keyframes rocketFloat {
+            0%, 100% { transform: translateY(0) rotate(-45deg); }
+            50% { transform: translateY(-20px) rotate(-40deg); }
         }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, 15px); }
         }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        /* --- Responsive มือถือ --- */
-        @media (max-width: 768px) {
-            .grid-container { grid-template-columns: 1fr; text-align: center; }
-            .maintenance-card { padding: 30px 20px; }
-            .logo { font-size: 2rem; }
-            .headline { font-size: 1.4rem; }
+        /* --- Responsive --- */
+        @media (max-width: 850px) {
+            .content-grid { grid-template-columns: 1fr; text-align: center; }
+            .lang-side.right { text-align: center; }
+            .center-graphic { order: -1; margin-bottom: 30px; }
+            .main-title { font-size: 1.6rem; }
+            .logo { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="maintenance-card">
+    <div class="tech-bg"></div>
+
+    <div class="floating-obj" style="top: 20%; left: 10%; font-size: 40px;">🎟️</div>
+    <div class="floating-obj" style="top: 15%; right: 15%; font-size: 50px;">💎</div>
+    <div class="floating-obj" style="bottom: 25%; left: 15%; font-size: 30px;">🛡️</div>
+
+    <div class="container">
         <div class="logo">Tix<span>Trust</span></div>
-        <h1 class="headline">ประกาศปิดปรับปรุงเว็บไซต์</h1>
-        <p class="sub-headline">Website Maintenance Announcement</p>
+        <h1 class="main-title">📢 ประกาศปิดปรับปรุงเว็บไซต์ TixTrust</h1>
+        <p class="sub-title">Website Maintenance Announcement</p>
 
-        <div class="grid-container">
-            <div class="lang-box">
-                <h2>ขออภัยในความไม่สะดวก</h2>
-                <p>ขณะนี้เว็บไซต์อยู่ระหว่างการปรับปรุงเพื่อเพิ่มประสิทธิภาพและยกระดับความปลอดภัยในการใช้งาน ทีมงานกำลังดำเนินการอย่างเต็มที่เพื่อกลับมาให้บริการโดยเร็วที่สุด</p>
+        <p class="desc-text">
+            ขณะนี้เว็บไซต์ TixTrust อยู่ระหว่างการปรับปรุงและพัฒนาระบบ <br>
+            เพื่อเพิ่มประสิทธิภาพและยกระดับความปลอดภัยในการซื้อ–ขายบัตรคอนเสิร์ตให้ดียิ่งยิ่งขึ้น
+        </p>
+
+        <div class="content-grid">
+            <div class="lang-side">
+                <p>
+                    ทีมงานกำลังดำเนินการอัปเดตระบบบางส่วน เพื่อให้ผู้ใช้งานได้รับประสบการณ์ที่สะดวก รวดเร็ว และปลอดภัยมากขึ้น
+                </p>
+                <span class="status-highlight">🔧 ระหว่างนี้เว็บไซต์จะ ปิดให้บริการชั่วคราว</span>
             </div>
 
-            <div class="lang-box">
-                <h2>System Update</h2>
-                <p>TixTrust is currently undergoing system improvements to enhance security and performance. We apologize for the inconvenience and will be back shortly.</p>
+            <div class="center-graphic">
+                <div class="decor-icon gear-top">⚙️</div>
+                <div class="rocket-main">🚀</div>
+                <div class="decor-icon lock-bottom">🔒</div>
             </div>
 
-            <div class="animation-area">
-                <div class="gear" style="top: 10px; left: 40%;">⚙️</div>
-                <div class="rocket">🚀</div>
-                <div class="gear" style="bottom: 10px; right: 40%;">⚙️</div>
+            <div class="lang-side right">
+                <p>
+                    The TixTrust website is currently undergoing maintenance and system improvements to enhance performance and provide a more secure ticket buying and selling experience.
+                </p>
+                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+                    We apologize for any inconvenience.
+                </p>
             </div>
         </div>
 
-        <div class="footer-banner">
-            WE WILL BE BACK ONLINE SOON
-        </div>
+        <p style="margin-top: 50px; font-weight: 300; opacity: 0.9;">
+            แล้วพบกันเร็ว ๆ นี้ 🚀 — ทีมงาน TixTrust
+        </p>
+    </div>
+
+    <div class="footer-bar">
+        We will be back online soon.
     </div>
 
 </body>
