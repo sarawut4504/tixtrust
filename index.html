@@ -1,67 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Maintenance - TixTrust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a237e; /* สีน้ำเงินหลัก TixTrust */
+            --accent-color: #00d2ff;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Kanit', 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-align: center;
+        }
 
-<title>TixTrust - Website Maintenance</title>
+        .container {
+            max-width: 800px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+        }
 
-<style>
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        .icon-box {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
 
-body{
-background:#0b1c3d;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:Arial, Helvetica, sans-serif;
-}
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
 
-.container{
-width:100%;
-text-align:center;
-padding:20px;
-}
+        p {
+            line-height: 1.6;
+            font-weight: 300;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
 
-.container img{
-max-width:100%;
-max-height:95vh;
-border-radius:12px;
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-}
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
 
-.footer{
-position:fixed;
-bottom:15px;
-width:100%;
-text-align:center;
-color:#9bbcff;
-font-size:14px;
-letter-spacing:1px;
-}
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+        }
 
-</style>
+        .footer-text {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 15px; }
+            .logo { font-size: 2rem; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="logo">TixTrust</div>
+        
+        <div class="icon-box">🚀</div>
 
-<img src="tixtrust-maintenance.jpg" alt="TixTrust Maintenance">
+        <h1>ประกาศปิดปรับปรุงเว็บไซต์</h1>
+        <p>ขณะนี้เว็บไซต์ TixTrust อยู่ระหว่างการปรับปรุงและพัฒนระบบ เพื่อเพิ่มประสิทธิภาพและยกระดับความปลอดภัยในการซื้อ–ขายบัตรคอนเสิร์ตให้ดียิ่งขึ้น</p>
+        
+        <div class="status-badge">🔧 เว็บไซต์ปิดให้บริการชั่วคราว</div>
 
-</div>
+        <p style="font-size: 0.95rem;">ทีมงานกำลังดำเนินการอัปเดตระบบเพื่อให้คุณได้รับประสบการณ์ที่สะดวก รวดเร็ว และปลอดภัยมากขึ้น ขออภัยในความไม่สะดวกครับ</p>
 
-<div class="footer">
-TixTrust © 2026 — Website Under Maintenance
-</div>
+        <hr>
+
+        <p class="footer-text">
+            The website is currently undergoing maintenance. We will be back online soon.<br>
+            <strong>— ทีมงาน TixTrust</strong>
+        </p>
+    </div>
 
 </body>
 </html>
